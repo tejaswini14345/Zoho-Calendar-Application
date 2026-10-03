@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Independent calendar workflow project with local event persistence.">
+  <title>Calendar Workspace</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <aside class="sidebar">
+      <div>
+        <p class="eyebrow">Calendar Workspace</p>
+        <h1>Plan with less noise.</h1>
+        <p class="subtitle">A lightweight month calendar with local event persistence.</p>
+      </div>
+
+      <button id="todayButton" class="secondary-button">Jump to today</button>
+
+      <section class="event-panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected day</p>
+            <h2 id="selectedDateTitle">Events</h2>
+          </div>
+        </div>
+
+        <form id="eventForm">
+          <input id="eventTitle" maxlength="80" placeholder="Event title" required>
+          <div class="event-fields">
+            <input id="eventTime" type="time">
+            <select id="eventType">
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+              <option value="study">Study</option>
+              <option value="reminder">Reminder</option>
+            </select>
+          </div>
+          <button type="submit">Add event</button>
+        </form>
+
+        <div id="eventList" class="event-list"></div>
+      </section>
+    </aside>
+
+    <section class="calendar-card">
+      <header class="calendar-header">
+        <div>
+          <p class="eyebrow">Month view</p>
+          <h2 id="monthTitle"></h2>
+        </div>
+        <div class="month-controls">
+          <button id="prevMonth" aria-label="Previous month">←</button>
+          <button id="nextMonth" aria-label="Next month">→</button>
+        </div>
+      </header>
+
+      <div class="weekday-row">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
